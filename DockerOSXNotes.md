@@ -1,5 +1,7 @@
 # Source:
 https://gist.github.com/bradleyfrank/561a04086ee69118dbbc57bc074d85eea
+https://dhwaneetbhatt.com/blog/run-docker-without-docker-desktop-on-macos
+https://nektony.com/how-to/uninstall-docker-on-mac
 
 # How it works
 
@@ -18,6 +20,22 @@ The docker version is likely more fined-tune.
 # uninstall docker-desktop and install docker-cli
 brew uninstall --cask docker && brew install --formula docker
 ```
+
+Full cleanup:
+https://nektony.com/how-to/uninstall-docker-on-mac
+
+# Kubernetes (minikube) way 
+
+```bash
+brew install hyperkit minikube docker docker-compose
+# 
+eval $(minikube docker-env)
+echo "`minikube ip` docker.local" | sudo tee -a /etc/hosts > /dev/null
+minikube start
+minikube pause
+```
+
+
 
 # Setup a Linux hosting dockerd
 
